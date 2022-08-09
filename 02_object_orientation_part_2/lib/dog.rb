@@ -3,10 +3,14 @@ class Dog
   # ✅ 1. class variable: all - holds all dogs we have saved
 
   # initialize with an optional hash of attributes
-  def initialize(attributes = {})
-    attributes.each do |attribute, value|
-      self.send("#{attribute}=", value)
-    end
+  def initialize(name, age, breed, image_url, last_fed_at,last_walked_at ) 
+    @name = name
+    @age = age
+    @breed = breed
+    @image_url = image_url
+    @last_fed_at = last_fed_at
+    @last_walked_at = last_walked_at
+    @@all << self
   end
 
   # ✅ 2. class method: 'all' - retrieves the value of the class variable
