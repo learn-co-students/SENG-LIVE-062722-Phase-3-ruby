@@ -12,7 +12,7 @@ require_relative "../lib/models/cat.rb"
 require_relative "../lib/models/dog.rb"
 require_relative "../lib/models/handler.rb"
 require_relative "../lib/models/owner.rb"
-require_relative "../lib/models/request.rb"
+require_relative "../lib/models/appointments.rb"
 require_relative "../lib/data.rb"
 require_relative "../lib/helper_methods.rb"
 
@@ -28,7 +28,7 @@ def reload
   load "lib/data.rb"
   load "lib/models/handler.rb"
   load "lib/models/owner.rb"
-  load "lib/modelsrequest.rb"
+  load "lib/models/appointments.rb"
   load "lib/helper_methods.rb"
 
   seed

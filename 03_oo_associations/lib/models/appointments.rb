@@ -1,14 +1,13 @@
-class Appointments  
+class Appointment  
   #Appointments creats a many to many relationship between Handler and Pet
 
   #The appointments can be a walk or a drop-in visit
-  
-  attr_accessor :time, :notes, :request, :feed, :complete
+  attr_reader :id
+  attr_accessor :request, :complete
   @@all = []
   def initialize(attributes = {})
-    @time = attributes[:time]
-    @notes = attributes[:notes]
-    @feed = attributes[:feed]
+    @id = @@all.length+1
+    @request = attributes[:request]
     @complete = attributes[:complete]
     
     @@all << self
@@ -17,6 +16,10 @@ class Appointments
   #Class methods
   def self.all
     @@all
+  end 
+
+  def self.by_index(idx)
+    @@all[idx]
   end 
 
   #Instance methods
