@@ -3,12 +3,14 @@ class Appointment
 
   #The appointments can be a walk or a drop-in visit
   attr_reader :id
-  attr_accessor :request, :complete
+  attr_accessor :request, :complete, :handler_id, :pet_id
   @@all = []
   def initialize(attributes = {})
     @id = @@all.length+1
     @request = attributes[:request]
     @complete = attributes[:complete]
+    @handler_id = attributes[:handler_id]
+    @pet_id = attributes[:pet_id]
     
     @@all << self
   end 
@@ -20,6 +22,10 @@ class Appointment
 
   def self.by_index(idx)
     @@all[idx]
+  end 
+
+  def self.first 
+    @@all[0]
   end 
 
   #Instance methods

@@ -5,6 +5,7 @@ end
 
 def seed_cats
   $cats_data.each{|c| Cat.new(c)}
+  # $cats_Data.forEach((sc) => .....)
 end 
 
 def seed_owners
