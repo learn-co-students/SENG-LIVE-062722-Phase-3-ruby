@@ -3,10 +3,10 @@ class Owner
     attr_accessor :username, :email, :address, :phone
     @@all = []
     def initialize(attributes = {})
-        @username = attributes.username
-        @email = attributes.email
-        @address = attributes.address
-        @phone = attributes.phone
+        @username = attributes[:username]
+        @email = attributes[:email]
+        @address = attributes[:address]
+        @phone = attributes[:phone]
         @@all << self
     end 
 

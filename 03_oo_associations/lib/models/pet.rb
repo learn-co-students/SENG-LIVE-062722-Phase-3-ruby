@@ -5,11 +5,14 @@ class Pet
 
     @@all = []
     #Mass assignment example
-    def initialize(attributes = {})
-        attributes.each do |attribute, value|
-          self.send("#{attribute}=", value)
-        end
-        @@all << self
+    def initialize(attributes={}) 
+      @name = attributes[:name]
+      @age = attributes[:age]
+      @breed = attributes[:breed]
+      @image_url = attributes[:image_url]
+      @last_fed_at = nil
+      @last_walked_at = nil
+      @@all << self
     end
 
     #.Class methods
@@ -24,11 +27,12 @@ class Pet
     #Instance methods
     def print
         puts
-        puts self.name.green
+        puts self.formatted_name
         puts "  Age: #{self.age}"
         puts "  Breed: #{self.breed}"
-        puts "  Image Url: #{self.image_url}"
-        puts "  Last fed at: #{format_time(self.last_fed_at)}"
+        puts "  Image Url: #{self.image_url}" unless(self.last_walked_at.nil?) 
+        puts "  Last fed at: #{format_time(self.last_fed_at)}"  unless(self.last_fed_at.nil?) 
+        puts
         puts
     end
 

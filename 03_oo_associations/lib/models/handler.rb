@@ -2,9 +2,9 @@ class Handler
     attr_accessor :name, :email, :phone
     @@all = []
     def initialize(attributes={})
-        @name = attributes.name
-        @email = attributes.email
-        @phone = attributes.phone
+        @name = attributes[:name]
+        @email = attributes[:email]
+        @phone = attributes[:phone]
         @@all << self
     end 
 
