@@ -112,6 +112,11 @@ bundle add sqlite3
 
 Install [DB Browser for SQLite](https://sqlitebrowser.org/)
 
+WSL [Using SQLite with VS Code Extension](https://www.youtube.com/watch?v=bKixKfb1J1o)
+  - Right click DB and select open Database
+  - In SQLite Explorer right click the Database and select new query 
+  - Wright the query, highlight the query, click right and select run query
+
 
 <!-- slide -->
 
