@@ -9,3 +9,8 @@
 - [ ] Observe how AR uses SQL “under the hood” to communicate with databases
 
 
+# Steps for using Active Record 
+1. Draw out your models/tables
+    What are your table names 
+    What are their attributes/data types
+2. use `rake db:create_migration NAME=table_name` to generate a migration

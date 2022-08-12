@@ -10,3 +10,8 @@ task :console do
   ActiveRecord::Base.logger = Logger.new(STDOUT)
   Pry.start
 end
+
+desc "Baby Shark"
+task :baby_shark do
+  puts "Baby 🦈, doo, doo, doo, doo, doo, doo. Baby 🦈, doo, doo, doo, doo, doo, doo."
+end 

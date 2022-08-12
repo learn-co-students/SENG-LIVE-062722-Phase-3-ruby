@@ -1,3 +1,4 @@
+puts "seeding data"
 $owner_data = [
     {
       username:"grannie52", 
@@ -171,5 +172,16 @@ $owner_data = [
       image_url: "https://res.cloudinary.com/dnocv6uwb/image/upload/v1629822337/sn-color_qesmhx.jpg"
     }
   ]
-  
 
+  Owner.destroy_all
+  Handler.destroy_all
+  Pets.destroy_all
+
+  $owner_data.each{|o|Owner.create(o)}
+  $handler_data.each{|h| Handler.create(h)}
+  $dogs_data.each{|d| Pet.create(d)}
+  $cats_data.each{|c| Pet.create(c)}
+
+
+
+  puts 'done'
