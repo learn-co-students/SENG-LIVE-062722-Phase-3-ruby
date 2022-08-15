@@ -11,3 +11,9 @@
 
 
 
+# Steps for Active Record 
+1. Draw out your tables and their associations
+2. Create Migration 
+3. Run Migration to create tables
+4. Seed to pop tables with data
+5. Create Associations 
