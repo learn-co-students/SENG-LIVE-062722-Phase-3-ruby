@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_26_003119) do
+ActiveRecord::Schema.define(version: 2022_08_22_140408) do
+
+  create_table "appointments", force: :cascade do |t|
+    t.string "request"
+    t.datetime "time"
+    t.integer "pet_id"
+    t.integer "handler_id"
+  end
 
   create_table "handlers", force: :cascade do |t|
     t.string "email"
@@ -31,13 +38,6 @@ ActiveRecord::Schema.define(version: 2022_07_26_003119) do
     t.string "image_url"
     t.integer "age"
     t.integer "owner_id"
-  end
-
-  create_table "requests", force: :cascade do |t|
-    t.string "request"
-    t.datetime "time"
-    t.integer "pet_id"
-    t.integer "handler_id"
   end
 
 end

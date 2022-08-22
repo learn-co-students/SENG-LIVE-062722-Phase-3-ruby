@@ -171,43 +171,50 @@ $dogs_data = [
     image_url: "https://res.cloudinary.com/dnocv6uwb/image/upload/v1629822337/sn-color_qesmhx.jpg"
   }
 ]
-$request_data = [
+$owner_data.each{|o| Owner.create(o)}
+$cats_data.each{|c| Pet.create(c)}
+$dogs_data.each{|d| Pet.create(d)}
+$handler_data.each{|h| Handler.create(h)}
+$appointment_data = [
   {
     time: Time.current,
-    pet_id: 4,
-    handler_id: 3
+    pet_id: Pet.first.id,
+    handler_id: Handler.third.id,
+    request:"walk"
   },  
   {
     time: Time.current,
-    pet_id: 2,
-    handler_id: 3
+    pet_id: Pet.second.id,
+    handler_id: Handler.second.id,
+    request:"walk"
   },
   {
     time: Time.current,
-    pet_id: 2,
-    handler_id: 2
+    pet_id: Pet.second.id,
+    handler_id: Handler.third.id,
+    request:"walk"
   },
   {
     time: Time.current,
-    pet_id: 1,
-    handler_id: 2
+    pet_id: Pet.first.id,
+    handler_id: Handler.second.id,
+    request:"walk"
   },
   {
     time: Time.current,
-    pet_id: 1,
-    handler_id: 2
+    pet_id: Pet.first.id,
+    handler_id: Handler.third.id,
+    request:"walk"
   },
   {
     time: Time.current,
-    pet_id: 2,
-    handler_id: 2
+    pet_id: Pet.first.id,
+    handler_id: Handler.first.id,
+    request:"walk"
   },
 ]
 
 
-$cats_data.each{|c| Pet.create(c)}
-$dogs_data.each{|d| Pet.create(d)}
-$handler_data.each{|h| Handler.create(h)}
-$request_data.each{|r| Request.create(r)}
+$appointment_data.each{|r| Appointment.create(r)}
 
 puts '🐈 Done! 🐕 '
